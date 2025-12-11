@@ -54,7 +54,6 @@ class Appointment(Base):
     severity = Column(Text, nullable=True)  # mild, moderate, severe
     duration = Column(Text, nullable=True)  # e.g., "2 days", "1 week"
     medical_history = Column(Text, nullable=True)  # patient's previous diseases/conditions
-    result = Column(Text)
     status = Column(Text, nullable=False, default='pending')  # pending, confirmed, cancelled, completed
     cancellation_reason = Column(Text, nullable=True)  # reason if cancelled by doctor
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)

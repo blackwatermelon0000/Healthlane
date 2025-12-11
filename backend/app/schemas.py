@@ -75,7 +75,6 @@ class AppointmentCreate(BaseModel):
     medical_history: Optional[str] = None  # patient's previous diseases/conditions
 
 class AppointmentUpdate(BaseModel):
-    result: Optional[str] = None
     status: Optional[str] = None  # pending, confirmed, cancelled, completed
     cancellation_reason: Optional[str] = None  # reason if cancelled
 
@@ -88,7 +87,6 @@ class AppointmentResponse(BaseModel):
     severity: Optional[str] = None
     duration: Optional[str] = None
     medical_history: Optional[str] = None
-    result: Optional[str]
     status: str
     cancellation_reason: Optional[str] = None
     created_at: datetime

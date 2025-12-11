@@ -12,7 +12,6 @@ const Appointments = () => {
   const [error, setError] = useState('');
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [editResult, setEditResult] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
   const [filterStatus, setFilterStatus] = useState('all');
   const [filterDate, setFilterDate] = useState('all');
@@ -39,7 +38,6 @@ const Appointments = () => {
           severity: appt.severity || 'moderate',
           duration: appt.duration || '',
           medical_history: appt.medical_history || '',
-          result: appt.result,
           appointmentCode: appt.appointment_code
         })));
       } catch (err) {
@@ -75,7 +73,7 @@ const Appointments = () => {
   const handleStatusUpdate = async (appointmentId, newStatus) => {
     setUpdatingId(appointmentId);
     try {
-      await api.put(`/api/appointments/${appointmentId}`, { status: newStatus, result: editResult });
+      await api.put(`/api/appointments/${appointmentId}`, { status: newStatus });
       // Refresh appointments
       const endpoint = userType === 'doctor' ? '/api/appointments/my' : '/api/appointments/my';
       const response = await api.get(endpoint);
@@ -92,12 +90,10 @@ const Appointments = () => {
         severity: appt.severity || 'moderate',
         duration: appt.duration || '',
         medical_history: appt.medical_history || '',
-        result: appt.result,
         appointmentCode: appt.appointment_code,
         cancellation_reason: appt.cancellation_reason
       })));
       setShowModal(false);
-      setEditResult('');
     } catch (err) {
       console.error('Failed to update appointment:', err);
       alert('Failed to update appointment');
@@ -109,7 +105,6 @@ const Appointments = () => {
   // Handle open modal
   const openModal = (appointment) => {
     setSelectedAppointment(appointment);
-    setEditResult(appointment.result || '');
     setShowModal(true);
   };
 
@@ -135,7 +130,6 @@ const Appointments = () => {
         severity: appt.severity || 'moderate',
         duration: appt.duration || '',
         medical_history: appt.medical_history || '',
-        result: appt.result,
         appointmentCode: appt.appointment_code,
         cancellation_reason: appt.cancellation_reason
       })));
@@ -183,7 +177,6 @@ const Appointments = () => {
         severity: appt.severity || 'moderate',
         duration: appt.duration || '',
         medical_history: appt.medical_history || '',
-        result: appt.result,
         appointmentCode: appt.appointment_code,
         cancellation_reason: appt.cancellation_reason
       })));

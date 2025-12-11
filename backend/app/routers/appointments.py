@@ -106,8 +106,8 @@ async def update_appointment_route(
     current_user: Union[Patient, Doctor] = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """Update appointment (doctor only - add result and change status)"""
-    print(f"\n[ROUTER] Update appointment request - ID: {appointment_id}, Status: {appointment.status}, Result: {appointment.result}")
+    """Update appointment (doctor only - change status)"""
+    print(f"\n[ROUTER] Update appointment request - ID: {appointment_id}, Status: {appointment.status}")
     
     if not isinstance(current_user, Doctor):
         raise HTTPException(
