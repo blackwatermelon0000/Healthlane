@@ -2,18 +2,18 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard'; // Admin dashboard
+import Dashboard from './pages/Dashboard';
 import Patients from './pages/Patients';
-import Appointments from './pages/Appointments'; // Admin appointments
+import Appointments from './pages/Appointments';
 import Doctors from './pages/Doctors';
-import DoctorPatients from './pages/DoctorPatients'; // New
+import DoctorPatients from './pages/DoctorPatients';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
-import PatientDashboard from './pages/Patient_Dashboard'; // New
-import MyAppointments from './pages/MyAppointments'; // New
-import BookAppointment from './pages/BookAppointment'; // New
-import Profile from './pages/Profile'; // New
-import DoctorProfile from './pages/DoctorProfile'; // New
+import PatientDashboard from './pages/Patient_Dashboard';
+import MyAppointments from './pages/MyAppointments';
+import BookAppointment from './pages/BookAppointment';
+import Profile from './pages/Profile';
+import DoctorProfile from './pages/DoctorProfile';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

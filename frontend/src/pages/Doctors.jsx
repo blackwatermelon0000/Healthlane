@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Plus, Phone, Mail, Briefcase, Star } from 'lucide-react';
 import Card from '../components/Card';
 import './Doctors.css';
-import api from '../api'; // Use api index re-export
-import DoctorProfile from './DoctorProfile'; // Import the DoctorProfile component
+import api from '../api';
+import DoctorProfile from './DoctorProfile';
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
