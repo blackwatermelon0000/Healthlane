@@ -326,6 +326,36 @@ const Appointments = () => {
                 {/* Modal Content */}
                 <div style={{ display: 'grid', gap: '1.5rem', marginBottom: '2rem' }}>
                   
+                  {/* Appointment Code */}
+                  <div style={{
+                    padding: '1.5rem',
+                    background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(109, 40, 217, 0.05) 100%)',
+                    borderRadius: '16px',
+                    border: '2px solid rgba(139, 92, 246, 0.2)'
+                  }}>
+                    <label style={{ 
+                      fontWeight: '700', 
+                      display: 'block', 
+                      marginBottom: '0.75rem',
+                      color: '#8b5cf6',
+                      fontSize: '0.875rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>
+                      Appointment Code
+                    </label>
+                    <p style={{ 
+                      margin: 0,
+                      color: '#1e293b', 
+                      fontSize: '1.25rem',
+                      fontWeight: '800',
+                      fontFamily: 'monospace',
+                      letterSpacing: '1px'
+                    }}>
+                      {selectedAppointment.appointmentCode || 'N/A'}
+                    </p>
+                  </div>
+
                   {/* Patient & Doctor Info */}
                   <div style={{ 
                     display: 'grid', 
