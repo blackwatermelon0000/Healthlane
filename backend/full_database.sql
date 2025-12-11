@@ -183,23 +183,3 @@ SELECT
   (SELECT COUNT(*) FROM patients) AS patients_count,
   (SELECT COUNT(*) FROM doctors) AS doctors_count,
   (SELECT COUNT(*) FROM appointments) AS appointments_count;
-
--- ========================================================
--- TABLES CREATED
--- ========================================================
--- 1. patients - Patient information and authentication
--- 2. doctors - Doctor profiles and credentials  
--- 3. appointments - Appointment records with patient-doctor linkage
---
--- REMOVED TABLES:
--- ❌ symptom_disease_mapping (removed as requested)
--- ❌ medical_reports (removed as requested)
--- ❌ disease_mapping (removed as requested)
---
--- FEATURES:
--- ✅ Automatic updated_at timestamp with trigger
--- ✅ UUID primary keys
--- ✅ Foreign key relationships
--- ✅ Performance indexes
--- ✅ Sample data included
--- ========================================================

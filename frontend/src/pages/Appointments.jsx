@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import Card from '../components/Card';
+import Table from '../components/Table';
 import api from '../api';
 import './Appointments.css';
 
@@ -109,6 +110,7 @@ const Appointments = () => {
   };
 
   const columns = [
+    { header: 'Appointment Code', key: 'appointmentCode' },
     { header: 'Patient', key: 'patient' },
     { header: 'Doctor', key: 'doctor' },
     { header: 'Date', key: 'date' },

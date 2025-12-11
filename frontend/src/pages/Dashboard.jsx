@@ -120,6 +120,7 @@ const Dashboard = () => {
         
         setRecentAppointments(appointments.slice(0, 10).map(appt => ({
           id: appt.id,
+          appointmentCode: appt.appointment_code || 'N/A',
           patient: appt.patient?.name || 'Unknown',
           doctor: appt.doctor?.name || 'Unassigned',
           time: new Date(appt.created_at).toLocaleTimeString(),
@@ -138,6 +139,7 @@ const Dashboard = () => {
   }, [userType]);
 
   const appointmentColumns = [
+    { header: 'Appointment Code', key: 'appointmentCode' },
     { header: 'Patient', key: 'patient' },
     { header: 'Doctor', key: 'doctor' },
     { header: 'Time', key: 'time' },

@@ -26,6 +26,7 @@ const PatientDashboard = () => {
 
       setRecentAppointments(appointments.map(appt => ({
         id: appt.id,
+        appointmentCode: appt.appointment_code || 'N/A',
         doctor: appt.doctor?.name || 'Unassigned',
         date: new Date(appt.created_at).toLocaleDateString(),
         time: new Date(appt.created_at).toLocaleTimeString(),
@@ -65,6 +66,7 @@ const PatientDashboard = () => {
   ];
 
   const appointmentColumns = [
+    { header: 'Appointment Code', key: 'appointmentCode' },
     { header: 'Doctor', key: 'doctor' },
     { header: 'Date', key: 'date' },
     { header: 'Time', key: 'time' },
