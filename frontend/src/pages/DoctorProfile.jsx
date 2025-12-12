@@ -143,7 +143,7 @@ const DoctorProfile = () => {
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
                 <Award size={20} style={{ marginRight: '0.75rem', color: 'var(--primary-color)' }} />
-                <label style={{ fontWeight: '600', color: 'var(--text-primary)' }}>Qualification</label>
+                <label style={{ fontWeight: '600', color: 'var(--text-primary)' }}>email</label>
               </div>
               <p style={{ margin: '0', color: 'var(--text-secondary)' }}>{profile.qualification || 'Not provided'}</p>
             </div>
