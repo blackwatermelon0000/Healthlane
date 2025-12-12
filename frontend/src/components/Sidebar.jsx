@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, setIsOpen, userType }) => {
         <div className="sidebar-header">
           <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
             <Activity size={32} className="logo-icon" />
-            {isOpen && <span className="logo-text">HealthCare</span>}
+            {isOpen && <span className="logo-text">HealthLane</span>}
           </div>
         </div>
 
