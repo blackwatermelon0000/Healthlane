@@ -4,7 +4,6 @@ services:
 
   db:
     image: postgres:14
-    container_name: hm_jenkins_postgres_db
     restart: unless-stopped
     environment:
       POSTGRES_USER: user
@@ -17,7 +16,6 @@ services:
 
   backend:
     image: python:3.11-slim
-    container_name: hm_jenkins_fastapi_app
     working_dir: /app
     volumes:
       - ./backend:/app
@@ -33,7 +31,6 @@ services:
 
   frontend:
     image: node:20-alpine
-    container_name: hm_jenkins_react_app
     working_dir: /app
     volumes:
       - ./frontend:/app
