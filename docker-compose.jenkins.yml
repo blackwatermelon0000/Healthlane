@@ -13,9 +13,9 @@ services:
     image: python:3.11-slim
     working_dir: /app
     volumes:
-      - ./backend:/app
+      - ${HOST_PROJECT_DIR:-/home/ashes/Healthlane}/backend:/app
     command: >
-      sh -c "pip install --no-cache-dir -r requirements.txt &&
+      sh -c "pip install --no-cache-dir -r /app/requirements.txt &&
              uvicorn app.main:app --host 0.0.0.0 --port 8000"
     environment:
       DATABASE_URL: postgresql://user:pass@db:5432/mydb
@@ -28,7 +28,7 @@ services:
     image: node:20-alpine
     working_dir: /app
     volumes:
-      - ./frontend:/app
+      - ${HOST_PROJECT_DIR:-/home/ashes/Healthlane}/frontend:/app
       - /app/node_modules
     command: >
       sh -c "npm install &&
