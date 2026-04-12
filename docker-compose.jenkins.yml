@@ -1,7 +1,4 @@
-version: "3.9"
-
 services:
-
   db:
     image: postgres:14
     restart: unless-stopped
@@ -11,8 +8,6 @@ services:
       POSTGRES_DB: mydb
     volumes:
       - jenkins_postgres_data:/var/lib/postgresql/data
-    ports:
-      - "55433:5432"
 
   backend:
     image: python:3.11-slim
